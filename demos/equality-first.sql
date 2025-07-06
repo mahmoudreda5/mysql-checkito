@@ -22,3 +22,5 @@ EXPLAIN FORMAT=JSON SELECT * FROM composite FORCE INDEX (idx_x_y_z) WHERE x = 65
 
 SELECT * FROM composite FORCE INDEX (idx_x_y_z) WHERE x >= 654321 AND y = 'G' AND z = 'k1l2m3n4o5';
 EXPLAIN FORMAT=JSON SELECT * FROM composite FORCE INDEX (idx_x_y_z) WHERE x >= 654321 AND y = 'G' AND z = 'k1l2m3n4o5';
+
+ALTER TABLE composite ALTER INDEX idx_x_y_z INVISIBLE;
