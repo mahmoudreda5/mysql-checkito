@@ -20,7 +20,7 @@ SELECT @threshold;
 -- fool optimizer?, not really...
 EXPLAIN SELECT * FROM distro WHERE a > @threshold;
 EXPLAIN ANALYZE SELECT * FROM distro WHERE a > @threshold;
-EXPLAIN ANALYZE SELECT * FROM distro force index (idx_a) WHERE a > @threshold;
+EXPLAIN ANALYZE SELECT * FROM distro FORCE INDEX (idx_a) WHERE a > @threshold;
 
 
 -- 'b' column selectivity
@@ -30,8 +30,8 @@ SELECT COUNT(DISTINCT b) / COUNT(*) FROM distro;
 EXPLAIN SELECT * FROM distro WHERE b = 1;
 EXPLAIN ANALYZE SELECT * FROM distro WHERE b = 1;
 
-EXPLAIN SELECT * FROM distro ignore index (idx_b) WHERE b = 1;
-EXPLAIN ANALYZE SELECT * FROM distro ignore index (idx_b) WHERE b = 1;
+EXPLAIN SELECT * FROM distro IGNORE INDEX (idx_b) WHERE b = 1;
+EXPLAIN ANALYZE SELECT * FROM distro IGNORE INDEX (idx_b) WHERE b = 1;
 
 EXPLAIN SELECT * FROM distro WHERE b = 0;
 EXPLAIN ANALYZE SELECT * FROM distro WHERE b = 0;
