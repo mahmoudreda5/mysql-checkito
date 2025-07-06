@@ -9,6 +9,7 @@ SELECT * FROM composite LIMIT 20;
 -- show table indexes
 SHOW INDEXES FROM composite;
 
+
 -- does covering index broke the leftmost prefix rule? not really, why?
 EXPLAIN SELECT x, y FROM composite WHERE y = 'M';
 
