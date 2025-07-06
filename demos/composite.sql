@@ -39,9 +39,11 @@ SELECT * FROM composite WHERE x > 333333 AND y < 'E';
 EXPLAIN SELECT * FROM composite WHERE x > 333333 AND y < 'E';
 SELECT * FROM composite FORCE INDEX (idx_x_y) WHERE x > 333333 AND y < 'E';
 
+
 -- x = 123456
 SELECT * FROM composite WHERE x = 123456;
 EXPLAIN SELECT * FROM composite WHERE x = 123456;
+
 
 -- y = 'M'
 SELECT * FROM composite WHERE y = 'M';

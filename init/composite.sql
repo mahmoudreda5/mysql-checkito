@@ -57,3 +57,4 @@ FROM
 -- creating indexes after data insertion
 CREATE INDEX idx_x_y ON composite(x, y);
 CREATE INDEX idx_y_x ON composite(y, x) INVISIBLE;
+CREATE INDEX idx_x_y_z ON composite(x, y, z) INVISIBLE;
