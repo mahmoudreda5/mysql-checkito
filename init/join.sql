@@ -22,7 +22,7 @@ CREATE TABLE IF NOT EXISTS accounts (
 
 INSERT INTO users (name, age)
 SELECT
-  CONCAT('Employee_', LPAD(t.n, 6, '0')),
+  CONCAT('User_', LPAD(t.n, 6, '0')),
   FLOOR(RAND() * 60) + 18
 FROM (
   SELECT
@@ -44,7 +44,7 @@ FROM (
 
 INSERT INTO employees (name, age)
 SELECT
-  CONCAT('User_', LPAD(t.n, 6, '0')),
+  CONCAT('Employee_', LPAD(t.n, 6, '0')),
   FLOOR(RAND() * 60) + 18
 FROM (
   SELECT
@@ -86,3 +86,4 @@ CREATE INDEX idx_age ON users(age) INVISIBLE;
 
 CREATE INDEX idx_age ON employees(age) INVISIBLE;
 CREATE INDEX idx_user_id ON accounts(user_id) INVISIBLE;
+CREATE INDEX idx_balance ON accounts(balance) INVISIBLE;
